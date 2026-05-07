@@ -1,784 +1,832 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Watts Construction | Custom Homes & Remodeling in Lake Ozark, MO</title>
-  <meta name="description" content="Custom homes, remodeling, additions, kitchens, and bathrooms in Lake Ozark and Mid-Missouri.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jason Watts Home | Custom Luxury Homes</title>
+  <meta name="description" content="Discover Jason Watts Home. Experience unparalleled craftsmanship and luxury in every custom build. Explore our portfolio of premium homes.">
+  
   <style>
-    :root{
-      --bg:#f7f8fb;
-      --panel:#ffffff;
-      --panel-soft:#eef2f8;
-      --text:#182034;
-      --muted:#5e687d;
-      --primary:#1d2b8f;
-      --primary-dark:#152169;
-      --accent:#8fa6e6;
-      --line:rgba(24,32,52,.10);
-      --shadow:0 16px 40px rgba(20,29,56,.08);
-      --max:1180px;
-      --radius:24px;
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+    :root {
+      --bg-color: #070707;
+      --surface-color: #121212;
+      --surface-light: #1e1e1e;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a0a0a0;
+      --accent-gold: #c5a059;
+      --accent-gold-hover: #dabb75;
+      
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Outfit', sans-serif;
+      
+      --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.3s ease;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,#f8f9fc 0%, #f2f5fb 100%);
-      color:var(--text);
-      line-height:1.5;
-    }
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-
-    .container{
-      width:min(calc(100% - 28px), var(--max));
-      margin:0 auto;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(247,248,251,.92);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .nav{
-      min-height:86px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:22px;
-      padding:10px 0;
-      position:relative;
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
     }
 
-    .brand-logo{
-      width:190px;
-      max-width:42vw;
-      height:auto;
-      flex-shrink:0;
+    h1 {
+      font-size: clamp(3rem, 6vw, 6rem);
+      text-transform: uppercase;
     }
 
-    .menu-toggle{
-      display:none;
-      border:none;
-      background:var(--primary);
-      color:#fff;
-      width:50px;
-      height:50px;
-      border-radius:16px;
-      font-size:24px;
-      font-weight:800;
-      cursor:pointer;
-      box-shadow:var(--shadow);
+    h2 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      margin-bottom: 1.5rem;
     }
 
-    .site-menu{
-      display:flex;
-      align-items:center;
-      gap:22px;
+    h3 {
+      font-size: clamp(1.5rem, 2vw, 2.5rem);
     }
 
-    .site-menu a{
-      font-size:14px;
-      font-weight:700;
-      color:var(--text);
+    p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 60ch;
     }
 
-    .site-menu a:hover{color:var(--primary)}
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background:var(--primary);
-      color:#fff;
-      font-weight:700;
-      padding:15px 22px;
-      border-radius:16px;
-      border:none;
-      cursor:pointer;
-      transition:.2s ease;
-      box-shadow:0 12px 28px rgba(29,43,143,.18);
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 5%;
     }
 
-    .btn:hover{background:var(--primary-dark);transform:translateY(-1px)}
-
-    .btn-outline{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(29,43,143,.18);
-      color:var(--primary);
-      background:#fff;
-      padding:14px 21px;
-      border-radius:16px;
-      font-weight:700;
-      transition:.2s ease;
+    section {
+      padding: 8rem 0;
     }
 
-    .btn-outline:hover{border-color:var(--primary);background:#f4f7ff}
-
-    .hero{
-      padding:26px 0 20px;
+    .text-center {
+      text-align: center;
     }
 
-    .hero-shell{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:20px;
-      align-items:stretch;
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: var(--transition-fast);
     }
 
-    .hero-copy,
-    .hero-visual{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:32px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
+    header.scrolled {
+      background: rgba(7, 7, 7, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .hero-copy{
-      padding:38px;
-      background:
-        radial-gradient(circle at top left, rgba(143,166,230,.26), transparent 34%),
-        linear-gradient(180deg,#ffffff 0%, #f7f9fe 100%);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+    /* Update to support image logo */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:14px;
-      color:var(--primary);
-      background:#eef3ff;
-      border:1px solid rgba(29,43,143,.10);
-      border-radius:999px;
-      padding:8px 13px;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.14em;
-      text-transform:uppercase;
+    .logo-img {
+      height: 60px; /* Adjust as needed */
+      width: auto;
+      margin-right: 15px;
+      object-fit: contain;
     }
 
-    .hero h1{
-      margin:0 0 14px;
-      font-size:clamp(42px, 6vw, 74px);
-      line-height:.95;
-      letter-spacing:-.05em;
-      max-width:620px;
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: none; /* Hide text if we prefer just the logo, or keep it */
     }
-
-    .hero p{
-      margin:0 0 24px;
-      font-size:clamp(18px, 2.1vw, 22px);
-      color:var(--muted);
-      max-width:620px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:22px;
-    }
-
-    .hero-points{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:12px;
-    }
-
-    .hero-point{
-      background:rgba(255,255,255,.86);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-    }
-
-    .hero-point strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:15px;
-    }
-
-    .hero-point span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .hero-visual{
-      min-height:640px;
-      position:relative;
-      background:
-        linear-gradient(180deg, rgba(18,30,92,.06), rgba(18,30,92,.20)),
-        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:flex-end;
-    }
-
-    .hero-card{
-      margin:20px;
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(255,255,255,.7);
-      backdrop-filter:blur(10px);
-      border-radius:24px;
-      padding:20px;
-      max-width:340px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-card strong{
-      display:block;
-      font-size:22px;
-      margin-bottom:10px;
-    }
-
-    .hero-card p{
-      margin:0;
-      font-size:16px;
-      color:#495165;
-    }
-
-    section{padding:38px 0}
-
-    .section-head{
-      text-align:center;
-      margin-bottom:22px;
-    }
-
-    .section-head h2{
-      margin:0 0 8px;
-      font-size:clamp(34px, 5vw, 56px);
-      line-height:1;
-      letter-spacing:-.04em;
-    }
-
-    .section-head p{
-      margin:0 auto;
-      max-width:780px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    .stats,
-    .services-grid,
-    .locations-grid,
-    .gallery-grid,
-    .steps-grid,
-    .contact-grid{
-      display:grid;
-      gap:18px;
-    }
-
-    .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .locations-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .steps-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .contact-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-
-    .stat,
-    .service-card,
-    .location-card,
-    .step-card,
-    .contact-item,
-    .about-box,
-    .why-box{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-    }
-
-    .stat,
-    .location-card,
-    .step-card,
-    .contact-item{padding:22px}
-
-    .stat h3,
-    .location-card h3,
-    .step-card h3{
-      margin:0 0 8px;
-      font-size:22px;
-    }
-
-    .stat p,
-    .location-card p,
-    .step-card p,
-    .contact-item p{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-    }
-
-    .service-card{overflow:hidden}
-    .service-card img{
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-    }
-
-    .service-body{padding:24px}
-    .service-body h3{
-      margin:0 0 10px;
-      font-size:25px;
-      line-height:1.05;
-    }
-    .service-body p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:17px;
-    }
-
-    .about-layout{
-      display:grid;
-      grid-template-columns:1.03fr .97fr;
-      gap:20px;
-      align-items:stretch;
-    }
-
-    .about-box,
-    .why-box{padding:30px}
-
-    .about-box h2,
-    .why-box h2{
-      margin:0 0 16px;
-      font-size:clamp(34px,5vw,58px);
-      line-height:.95;
-      letter-spacing:-.04em;
-    }
-
-    .about-box p,
-    .why-box p{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    .checklist{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .check{
-      padding:14px 16px;
-      background:var(--panel-soft);
-      border:1px solid var(--line);
-      border-radius:16px;
-      font-weight:600;
-    }
-
-    .gallery-grid img{
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-      border-radius:24px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
-
-    .contact-shell{
-      background:linear-gradient(180deg,#ffffff 0%, #f5f8ff 100%);
-      border:1px solid var(--line);
-      border-radius:30px;
-      box-shadow:var(--shadow);
-      padding:30px;
-    }
-
-    .contact-shell h2{
-      margin:0 0 12px;
-      font-size:clamp(36px, 5vw, 64px);
-      line-height:1;
-      letter-spacing:-.04em;
-    }
-
-    .contact-shell p{
-      margin:0 0 24px;
-      color:var(--muted);
-      font-size:19px;
-      max-width:760px;
-    }
-
-    .contact-item strong{
-      display:block;
-      margin-bottom:8px;
-      font-size:17px;
-      color:var(--primary);
-    }
-
-    .contact-item span,
-    .contact-item a{
-      color:var(--text);
-      font-size:18px;
-      word-break:break-word;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      color:#677287;
-      padding:24px 0 34px;
-      text-align:center;
-      font-size:15px;
-    }
-
-    .floating-call-btn{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:999;
-      background:var(--primary);
-      color:#fff;
-      font-weight:800;
-      padding:14px 18px;
-      border-radius:999px;
-      box-shadow:0 14px 32px rgba(29,43,143,.24);
-      font-size:15px;
-      transition:.2s ease;
-    }
-
-    .floating-call-btn:hover{background:var(--primary-dark);transform:translateY(-2px)}
-
-    @media (max-width:920px){
-      .menu-toggle{display:block}
-      .site-menu{
-        display:none;
-        position:absolute;
-        top:100%;
-        right:14px;
-        background:#fff;
-        border:1px solid var(--line);
-        border-radius:18px;
-        padding:14px;
-        flex-direction:column;
-        align-items:flex-start;
-        min-width:220px;
-        box-shadow:var(--shadow);
-        z-index:999;
+    
+    @media (min-width: 768px) {
+      .logo-text {
+        display: block;
       }
-      .site-menu.show{display:flex}
-      .site-menu a{width:100%;padding:8px 0}
-      .hero-shell,
-      .about-layout,
-      .stats,
-      .services-grid,
-      .locations-grid,
-      .gallery-grid,
-      .steps-grid,
-      .contact-grid{grid-template-columns:1fr}
-      .hero-visual{min-height:460px}
-      .hero-copy{padding:24px}
     }
 
-    @media (max-width:560px){
-      .container{width:min(calc(100% - 20px), var(--max))}
-      .brand-logo{width:148px;max-width:48vw}
-      .hero{padding-top:14px}
-      .hero-copy,
-      .hero-visual,
-      .about-box,
-      .why-box,
-      .contact-shell{border-radius:24px}
-      .hero-copy,
-      .about-box,
-      .why-box,
-      .contact-shell,
-      .stat,
-      .location-card,
-      .step-card,
-      .contact-item,
-      .service-body{padding:20px}
-      .hero-points{grid-template-columns:1fr}
-      .floating-call-btn{right:14px;bottom:14px;font-size:14px;padding:13px 16px}
+    .logo-text span {
+      color: var(--accent-gold);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent-gold);
+      transition: var(--transition-fast);
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--accent-gold);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--accent-gold);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .btn:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .btn:hover {
+      color: var(--bg-color);
+      font-weight: 600;
+    }
+
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-image: url('./public/assets/DroneLakeHouseShot-1920w.webp');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      will-change: transform;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(7,7,7,0.7) 0%, rgba(7,7,7,0.2) 100%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .hero p {
+      color: #ddd;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .about {
+      background: var(--bg-color);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 1.5s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-content h2 {
+      margin-bottom: 2rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .services {
+      background: var(--surface-color);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .service-card {
+      background: var(--surface-light);
+      padding: 3rem 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition-smooth);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .portfolio {
+      background: var(--bg-color);
+    }
+
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-auto-rows: 250px;
+      gap: 1.5rem;
+      grid-auto-flow: dense;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(2n) {
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(5n) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* Kept full high quality - removed grayscale filter */
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%);
+      opacity: 0;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-text h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover .gallery-item-text h4 {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .contact {
+      background: linear-gradient(to right, var(--surface-color) 0%, var(--bg-color) 100%);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info-item {
+      margin-bottom: 2rem;
+    }
+
+    .contact-info-item h4 {
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+
+    .contact-info-item p {
+      font-size: 1.2rem;
+      color: var(--text-primary);
+    }
+
+    form {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 1rem 0;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-bottom-color: var(--accent-gold);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    label {
+      position: absolute;
+      top: 1rem;
+      left: 0;
+      color: var(--text-secondary);
+      pointer-events: none;
+      transition: var(--transition-fast);
+    }
+
+    input:focus ~ label,
+    input:valid ~ label,
+    textarea:focus ~ label,
+    textarea:valid ~ label {
+      top: -10px;
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+    }
+
+    footer {
+      background: #000;
+      padding: 3rem 5%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin: 0 auto;
+      color: var(--text-secondary);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .portfolio-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      
+      nav ul {
+        display: none;
+      }
+      
+      .logo-img {
+        height: 40px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a href="#home" class="brand">
-        <img src="Watts-Construction-logo_web-1920w.png" alt="Watts Construction" class="brand-logo">
-      </a>
 
-      <button class="menu-toggle" id="menuToggle">☰</button>
-
-      <nav class="site-menu" id="siteMenu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#locations">Locations</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#quote">Contact</a>
-      </nav>
-    </div>
+  <!-- Navigation -->
+  <header id="header">
+    <a href="#" class="logo-container">
+      <!-- Original Company Logo Image -->
+      <img src="./public/assets/IMG_0051-150x150-1920w.webp" alt="Jason Watts Home Logo" class="logo-img" onerror="this.src='./public/assets/IMG_0004-150x150-1920w.webp'">
+      <div class="logo-text">Jason Watts <span>Home</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-shell">
-        <div class="hero-copy">
-          <div class="eyebrow">Custom Homes & Remodeling in Mid-Missouri</div>
-          <h1>Build Better. Live Better.</h1>
-          <p>Custom homes, additions, kitchens, bathrooms, and remodeling work designed around the way your family actually lives.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <span class="hero-subtitle">Master Craftsmanship</span>
+        <h1>Building Your Legacy</h1>
+        <p>Experience unparalleled quality and visionary design. At Jason Watts Home, we build more than houses; we craft bespoke luxury environments tailored to your extraordinary lifestyle.</p>
+        <a href="#portfolio" class="btn">View Our Work</a>
+      </div>
+    </div>
+  </section>
 
-          <div class="hero-actions">
-            <a href="#quote" class="btn">GET A FREE ESTIMATE</a>
-            <a href="#gallery" class="btn-outline">VIEW PROJECTS</a>
-          </div>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-image reveal">
+        <img src="./public/assets/OsageNational2024-1920w.webp" alt="Luxury home exterior at Osage National">
+      </div>
+      <div class="about-content reveal">
+        <h2>Uncompromising Quality</h2>
+        <p>Every Jason Watts home is a testament to our relentless pursuit of perfection. From the initial blueprint to the final, exquisite detail, we source the finest materials and employ master artisans.</p>
+        <p>Our commitment is simple: delivering a seamless, premium building experience that culminates in a masterpiece you will proudly call home for generations.</p>
+        <a href="#contact" class="btn">Start Your Project</a>
+      </div>
+    </div>
+  </section>
 
-          <div class="hero-points">
-            <div class="hero-point">
-              <strong>Since 1997</strong>
-              <span>Trusted residential construction experience in Mid-Missouri.</span>
-            </div>
-            <div class="hero-point">
-              <strong>Custom-Fit Design</strong>
-              <span>Homes and remodels designed around lifestyle, comfort, and function.</span>
-            </div>
-            <div class="hero-point">
-              <strong>Quality First</strong>
-              <span>Built with care, clear communication, and long-term value in mind.</span>
-            </div>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2>Our Expertise</h2>
+        <p style="margin: 0 auto;">Comprehensive bespoke solutions for the world's most discerning homeowners.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">🏗️</div>
+          <h3>Custom Builds</h3>
+          <p>End-to-end management of luxury home construction, ensuring flawless execution from foundation to finish.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">✏️</div>
+          <h3>Architectural Design</h3>
+          <p>Collaborating with elite architects to craft visionary spaces that perfectly blend aesthetics and functionality.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🛋️</div>
+          <h3>Premium Interiors</h3>
+          <p>Curated interior finishing, sourcing exclusive materials, fixtures, and smart home technology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header reveal">
+        <div>
+          <h2>Featured Masterpieces</h2>
+          <p>A curated selection of our most distinguished projects.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <img src="./public/assets/ColumbiaBuild2021-1920w.webp" alt="Columbia Build 2021">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Columbia Build 2021</h4></div>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-card">
-            <strong>Luxury Feel. Practical Living.</strong>
-            <p>From accessible layouts to modern finishes and smart home upgrades, every detail is designed to make home feel better.</p>
+        <div class="gallery-item reveal">
+          <img src="./public/assets/AshlandFraming2022-1920w.webp" alt="Ashland Framing">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Ashland Estate</h4></div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="./public/assets/FramingDrone-1920w.webp" alt="Framing Drone View">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Structural Excellence</h4></div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="./public/assets/IMG_0080-1920w.webp" alt="Interior Details">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Interior Refinement</h4></div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="./public/assets/IMG_0073-1920w.webp" alt="Custom Finishes">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Custom Finishes</h4></div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="./public/assets/IMG_0076-1920w.webp" alt="Living Spaces">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Expansive Living Spaces</h4></div>
+          </div>
+        </div>
+        
+        <div class="gallery-item reveal">
+          <img src="./public/assets/IMG_0071-36bb2d7c-1920w.webp" alt="Architectural Detail">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Architectural Detail</h4></div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="./public/assets/20170813_130246-1920w.webp" alt="Exterior View">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Estate Grounds</h4></div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="./public/assets/IMG_1462-1920w.webp" alt="Build Progress">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text"><h4>Foundation Phase</h4></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <div class="container stats">
-        <div class="stat">
-          <h3>Custom Homes</h3>
-          <p>Ground-up homes built around your style, layout, and future needs.</p>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <h2>Inquire</h2>
+        <p style="margin-bottom: 3rem;">Ready to build your dream home? Connect with our team to discuss your vision.</p>
+        
+        <div class="contact-info-item">
+          <h4>Location</h4>
+          <p>Osage National, MO</p>
         </div>
-        <div class="stat">
-          <h3>Remodeling</h3>
-          <p>Kitchen, bathroom, and whole-home updates that improve how your space works.</p>
+        <div class="contact-info-item">
+          <h4>Email</h4>
+          <p>contact@jasonwattshome.com</p>
         </div>
-        <div class="stat">
-          <h3>Additions</h3>
-          <p>More room, better flow, and upgrades that feel like they were always meant to be there.</p>
-        </div>
-        <div class="stat">
-          <h3>Mid-Missouri Service</h3>
-          <p>Proudly serving Lake Ozark and surrounding communities with quality construction.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Services</div>
-          <h2>Built Around Your Life</h2>
-          <p>Whether you are starting fresh or updating the home you already love, Watts Construction delivers clean, high-quality results with a modern, homeowner-focused approach.</p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="Custom home exterior">
-            <div class="service-body">
-              <h3>Custom Homes</h3>
-              <p>Homes designed around your family, your routines, and the way you want to live every day.</p>
-              <a href="#quote" class="btn">START YOUR PROJECT</a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Kitchen remodeling">
-            <div class="service-body">
-              <h3>Kitchens & Bathrooms</h3>
-              <p>Beautiful remodels that combine daily function, comfort, and long-term value.</p>
-              <a href="#quote" class="btn">GET A QUOTE</a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Home addition and remodeling">
-            <div class="service-body">
-              <h3>Additions & Remodeling</h3>
-              <p>Expand your space, improve your layout, and make your home fit your life better.</p>
-              <a href="#quote" class="btn">DISCUSS YOUR PROJECT</a>
-            </div>
-          </article>
+        <div class="contact-info-item">
+          <h4>Phone</h4>
+          <p>(555) 123-4567</p>
         </div>
       </div>
-    </section>
-
-    <section id="locations">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Service Area</div>
-          <h2>Proudly Serving Mid-Missouri</h2>
-          <p>Watts Construction works with homeowners throughout Lake Ozark and nearby communities across central Missouri.</p>
-        </div>
-
-        <div class="locations-grid">
-          <div class="location-card">
-            <h3>Lake Ozark</h3>
-            <p>Custom homes, additions, and remodeling projects tailored to lake-area living.</p>
+      
+      <div class="contact-form reveal">
+        <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. A representative will contact you shortly.');">
+          <div class="input-group">
+            <input type="text" id="name" required>
+            <label for="name">Full Name</label>
           </div>
-          <div class="location-card">
-            <h3>Osage Beach & Four Seasons</h3>
-            <p>Modern construction, smart upgrades, and quality finishes built for long-term use.</p>
+          <div class="input-group">
+            <input type="email" id="email" required>
+            <label for="email">Email Address</label>
           </div>
-          <div class="location-card">
-            <h3>Camdenton & Nearby</h3>
-            <p>Serving surrounding communities with dependable communication and quality workmanship.</p>
+          <div class="input-group">
+            <input type="text" id="phone" required>
+            <label for="phone">Phone Number</label>
           </div>
-        </div>
+          <div class="input-group">
+            <textarea id="message" required></textarea>
+            <label for="message">Your Vision</label>
+          </div>
+          <button type="submit" class="btn" style="margin-top: 1rem;">Submit Inquiry</button>
+        </form>
       </div>
-    </section>
-
-    <section>
-      <div class="container about-layout">
-        <div class="about-box">
-          <div class="eyebrow">About Watts Construction</div>
-          <h2>A Better Way to Build</h2>
-          <p>Watts Construction helps homeowners create custom spaces that feel personal, practical, and built to last. From full custom homes to targeted remodels, every project is designed around comfort, function, and long-term value.</p>
-          <p>Modern layouts, clean finishes, accessibility options, and smart home features can all be built into a project that fits your life instead of forcing you to work around your house.</p>
-          <a href="#quote" class="btn">TALK WITH OUR TEAM</a>
-        </div>
-
-        <div class="why-box">
-          <div class="eyebrow">Why Homeowners Choose Us</div>
-          <h2>Clear Process. Quality Results.</h2>
-          <div class="checklist">
-            <div class="check">Custom home and remodeling experience since 1997</div>
-            <div class="check">Homeowner-focused design and practical layouts</div>
-            <div class="check">Modern construction with accessibility options</div>
-            <div class="check">Clean communication from start to finish</div>
-            <div class="check">Kitchens, bathrooms, additions, and full custom homes</div>
-            <div class="check">High-quality finishes built for everyday living</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Gallery</div>
-          <h2>Real Projects. Real Results.</h2>
-          <p>Explore recent custom home and remodeling inspiration built for homeowners who want quality, comfort, and a better way to live.</p>
-        </div>
-
-        <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80" alt="Finished custom home interior">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Luxury kitchen remodel">
-          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80" alt="Modern bathroom remodel">
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Custom home exterior">
-        </div>
-      </div>
-    </section>
-
-    <section id="how-it-works">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">How It Works</div>
-          <h2>Simple From Start to Finish</h2>
-          <p>We keep the process organized, easy to understand, and centered around your goals from the first conversation to the finished result.</p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <h3>1. Reach Out</h3>
-            <p>Tell us about your custom home, remodel, or addition and what you want your space to do better.</p>
-          </div>
-          <div class="step-card">
-            <h3>2. Plan the Build</h3>
-            <p>We review your goals, layout, timeline, and features to map out the right direction.</p>
-          </div>
-          <div class="step-card">
-            <h3>3. Build With Confidence</h3>
-            <p>Your project moves forward with quality workmanship and clear communication throughout.</p>
-          </div>
-          <div class="step-card">
-            <h3>4. Enjoy the Result</h3>
-            <p>Live in a space that feels more comfortable, more functional, and built around your life.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="quote">
-      <div class="container">
-        <div class="contact-shell">
-          <div class="eyebrow">Get a Free Estimate</div>
-          <h2>Ready to Build Smarter?</h2>
-          <p>Call, email, or reach out today to talk about your custom home, remodeling, or addition project in Lake Ozark and Mid-Missouri.</p>
-
-          <div class="contact-grid">
-            <div class="contact-item">
-              <strong>Address</strong>
-              <span>197 Ginger Rd, Lake Ozark, MO 65049</span>
-            </div>
-            <div class="contact-item">
-              <strong>Phone</strong>
-              <a href="tel:5736571940">(573) 657-1940</a>
-            </div>
-            <div class="contact-item">
-              <strong>Email</strong>
-              <a href="mailto:Jason.wattsconstruction@gmail.com">Jason.wattsconstruction@gmail.com</a>
-            </div>
-            <div class="contact-item">
-              <strong>Company</strong>
-              <span>Watts Construction</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      Watts Construction • Custom Homes, Remodels & Additions in Mid-Missouri
+      <div class="footer-logo">Jason Watts <span>Home</span></div>
+      <p>&copy; 2026 Jason Watts Home. All Rights Reserved. Master Custom Builders.</p>
     </div>
   </footer>
 
-  <a href="tel:5736571940" class="floating-call-btn">Call Today</a>
-
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const siteMenu = document.getElementById('siteMenu');
-    const menuLinks = document.querySelectorAll('#siteMenu a');
-
-    if (menuToggle && siteMenu) {
-      menuToggle.addEventListener('click', () => {
-        siteMenu.classList.toggle('show');
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Header scroll effect
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
       });
 
-      menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          siteMenu.classList.remove('show');
+      // Parallax effect for Hero Background
+      const heroBg = document.getElementById('heroBg');
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        // Move the background slightly slower than the scroll speed for a parallax effect
+        if (heroBg && scrollPosition < window.innerHeight) {
+          heroBg.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        }
+      });
+
+      // Intersection Observer for scroll animations (fade in / slide up)
+      const revealElements = document.querySelectorAll('.reveal');
+
+      const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, revealOptions);
+
+      revealElements.forEach(el => {
+        revealOnScroll.observe(el);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }
         });
       });
-    }
+    });
   </script>
 </body>
 </html>
