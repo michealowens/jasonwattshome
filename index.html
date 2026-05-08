@@ -3,201 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jason Watts Home | Custom Luxury Homes</title>
-  <meta name="description" content="Discover Jason Watts Home. Experience unparalleled craftsmanship and luxury in every custom build. Explore our portfolio of premium homes.">
+  <title>Jason Watts Home | Custom Luxury Estates</title>
+  <meta name="description" content="Discover Jason Watts Home. Experience unparalleled craftsmanship and luxury in every custom build.">
   
+  <!-- Modern, Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap');
-
     :root {
-      --bg-color: #070707;
-      --surface-color: #121212;
-      --surface-light: #1e1e1e;
-      --text-primary: #f5f5f5;
-      --text-secondary: #a0a0a0;
-      --accent-gold: #c5a059;
-      --accent-gold-hover: #dabb75;
+      --bg-color: #030303;
+      --surface-dark: #0a0a0a;
+      --surface-light: #141414;
+      --surface-card: rgba(20, 20, 20, 0.6);
       
-      --font-heading: 'Cinzel', serif;
-      --font-body: 'Outfit', sans-serif;
+      --text-main: #ffffff;
+      --text-muted: #a1a1aa;
       
-      --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-fast: all 0.3s ease;
+      /* Premium Gold Gradient */
+      --gold-light: #F4D068;
+      --gold-main: #C69320;
+      --gold-dark: #9A6F10;
+      --gold-gradient: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
+      
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      
+      --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      --transition-med: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      --transition-fast: 0.3s ease;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--bg-color);
-      color: var(--text-primary);
+      color: var(--text-main);
       font-family: var(--font-body);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Typography */
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-heading);
       font-weight: 400;
-      letter-spacing: 0.05em;
       line-height: 1.2;
     }
 
     h1 {
-      font-size: clamp(3rem, 6vw, 6rem);
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
     }
 
-    h3 {
-      font-size: clamp(1.5rem, 2vw, 2.5rem);
+    h2 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
     }
+
+    /* Accent Line for H2 */
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--gold-gradient);
+      transition: width var(--transition-med);
+    }
+    
+    .text-center h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h3 { font-size: 1.75rem; letter-spacing: 0.02em; }
 
     p {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      max-width: 60ch;
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
     }
 
+    .gold-text {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Layout & Containers */
     .container {
-      max-width: 1400px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 0 5%;
+      padding: 0 6%;
     }
 
-    section {
-      padding: 8rem 0;
-    }
+    section { padding: 10rem 0; position: relative; }
 
-    .text-center {
-      text-align: center;
-    }
+    .text-center { text-align: center; }
 
+    /* Premium Navigation */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 1.5rem 5%;
+      padding: 1.5rem 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 100;
-      transition: var(--transition-fast);
+      z-index: 1000;
+      transition: var(--transition-med);
+      background: transparent;
     }
 
     header.scrolled {
-      background: rgba(7, 7, 7, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 5%;
+      background: rgba(3, 3, 3, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1rem 6%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     }
 
-    /* Update to support image logo */
     .logo-container {
       display: flex;
       align-items: center;
       text-decoration: none;
+      gap: 15px;
     }
 
     .logo-img {
-      height: 60px; /* Adjust as needed */
+      height: 55px;
       width: auto;
-      margin-right: 15px;
       object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+      transition: var(--transition-fast);
+    }
+    
+    header.scrolled .logo-img {
+      height: 45px;
     }
 
     .logo-text {
       font-family: var(--font-heading);
-      font-size: 1.5rem;
-      color: var(--text-primary);
-      letter-spacing: 0.1em;
+      font-size: 1.6rem;
+      color: var(--text-main);
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      display: none; /* Hide text if we prefer just the logo, or keep it */
+      font-weight: 600;
+      display: none;
     }
     
-    @media (min-width: 768px) {
-      .logo-text {
-        display: block;
-      }
-    }
-
-    .logo-text span {
-      color: var(--accent-gold);
-    }
+    @media (min-width: 768px) { .logo-text { display: block; } }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
     }
 
     nav a {
-      color: var(--text-primary);
+      color: var(--text-main);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      transition: var(--transition-fast);
+      letter-spacing: 0.15em;
+      font-weight: 400;
       position: relative;
+      padding-bottom: 5px;
+      opacity: 0.8;
+      transition: var(--transition-fast);
     }
 
     nav a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0;
+      bottom: 0;
+      left: 50%;
       width: 0;
       height: 1px;
-      background-color: var(--accent-gold);
-      transition: var(--transition-fast);
+      background: var(--gold-gradient);
+      transition: var(--transition-med);
+      transform: translateX(-50%);
     }
 
-    nav a:hover {
-      color: var(--accent-gold);
-    }
+    nav a:hover { opacity: 1; color: var(--gold-light); }
+    nav a:hover::after { width: 100%; }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
+    /* Buttons */
     .btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem 3rem;
       background: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--accent-gold);
+      color: var(--text-main);
       text-decoration: none;
-      font-family: var(--font-heading);
+      font-family: var(--font-body);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.9rem;
-      transition: var(--transition-smooth);
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition-med);
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(198, 147, 32, 0.5);
+      border-radius: 2px;
     }
 
     .btn::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--accent-gold);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--gold-gradient);
       z-index: -1;
       transform: scaleX(0);
       transform-origin: right;
@@ -210,165 +242,276 @@
     }
 
     .btn:hover {
-      color: var(--bg-color);
-      font-weight: 600;
+      color: #000;
+      border-color: transparent;
+      box-shadow: 0 0 20px rgba(198, 147, 32, 0.4);
     }
 
+    /* Hero Section */
     .hero {
       height: 100vh;
-      position: relative;
+      min-height: 800px;
       display: flex;
       align-items: center;
-      padding: 0 5%;
-      overflow: hidden;
+      padding-top: 5rem;
+      position: relative;
     }
 
     .hero-bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120%;
+      top: 0; left: 0; width: 100%; height: 115%;
       background-image: url('DroneLakeHouseShot-1920w.webp');
       background-size: cover;
-      background-position: center;
+      background-position: center 30%;
       z-index: -2;
       will-change: transform;
+      transform-origin: top;
     }
 
     .hero-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(7,7,7,0.7) 0%, rgba(7,7,7,0.2) 100%);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(
+        90deg, 
+        rgba(3,3,3,0.9) 0%, 
+        rgba(3,3,3,0.6) 40%, 
+        rgba(3,3,3,0.2) 100%
+      );
+      z-index: -1;
+    }
+    
+    .hero-vignette {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
       z-index: -1;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 850px;
     }
 
     .hero-subtitle {
       font-family: var(--font-body);
-      color: var(--accent-gold);
+      color: var(--gold-light);
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      display: block;
+      letter-spacing: 0.3em;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .hero-subtitle::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gold-main);
     }
 
     .hero p {
-      color: #ddd;
-      font-size: 1.2rem;
+      color: #e0e0e0;
+      font-size: 1.25rem;
+      max-width: 600px;
       margin-top: 1.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
+      line-height: 1.8;
     }
 
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0.6;
+      animation: bounce 2s infinite;
+      text-decoration: none;
+    }
+    
+    .scroll-indicator span {
+      color: var(--text-main);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold-main), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-15px) translateX(-50%); }
+      60% { transform: translateY(-7px) translateX(-50%); }
+    }
+
+    /* About Section */
     .about {
-      background: var(--bg-color);
-      position: relative;
+      background: var(--surface-dark);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 6rem;
       align-items: center;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+      padding-bottom: 3rem;
+      padding-right: 3rem;
     }
 
     .about-image {
       position: relative;
-      border-radius: 4px;
+      border-radius: 2px;
       overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      z-index: 2;
     }
 
     .about-image img {
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 1.5s ease;
+      transition: transform 1.5s var(--transition-slow);
     }
 
     .about-image:hover img {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
-    .about-content h2 {
-      margin-bottom: 2rem;
+    /* Decorative Gold Frame */
+    .about-image-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      border: 2px solid var(--gold-main);
+      z-index: 1;
+      transform: translate(-20px, -20px);
+      transition: transform var(--transition-med);
+    }
+    
+    .about-image-wrapper:hover::after {
+      transform: translate(0, 0);
     }
 
     .about-content p {
-      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
 
+    /* Services Section */
     .services {
-      background: var(--surface-color);
+      background: var(--bg-color);
+      position: relative;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 5rem;
     }
 
     .service-card {
-      background: var(--surface-light);
-      padding: 3rem 2rem;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: var(--transition-smooth);
+      background: var(--surface-card);
+      backdrop-filter: blur(10px);
+      padding: 4rem 3rem;
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 4px;
+      transition: var(--transition-slow);
       position: relative;
       overflow: hidden;
+      group: hover;
     }
 
     .service-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--accent-gold);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at top right, rgba(198, 147, 32, 0.1), transparent 50%);
+      opacity: 0;
+      transition: opacity var(--transition-med);
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; width: 100%; height: 3px;
+      background: var(--gold-gradient);
       transform: scaleX(0);
       transform-origin: left;
-      transition: var(--transition-smooth);
+      transition: transform var(--transition-slow);
     }
 
     .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transform: translateY(-15px);
+      background: rgba(30, 30, 30, 0.8);
+      border-color: rgba(198, 147, 32, 0.2);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     }
 
-    .service-card:hover::before {
-      transform: scaleX(1);
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      color: rgba(255,255,255,0.05);
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: var(--transition-med);
+    }
+    
+    .service-card:hover .service-number {
+      color: rgba(198, 147, 32, 0.15);
+      transform: scale(1.1) translateY(-10px);
     }
 
     .service-icon {
       font-size: 2.5rem;
-      color: var(--accent-gold);
-      margin-bottom: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      display: inline-block;
     }
 
+    .service-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    /* Portfolio Section */
     .portfolio {
-      background: var(--bg-color);
+      background: var(--surface-dark);
     }
 
     .portfolio-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-auto-rows: 250px;
-      gap: 1.5rem;
-      grid-auto-flow: dense;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 300px;
+      gap: 2rem;
     }
 
     .gallery-item {
@@ -376,91 +519,128 @@
       border-radius: 4px;
       overflow: hidden;
       cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
-    .gallery-item:nth-child(2n) {
-      grid-row: span 2;
-    }
-
-    .gallery-item:nth-child(5n) {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
+    /* Masonry Layout via Grid Lines */
+    .item-1 { grid-column: span 8; grid-row: span 2; }
+    .item-2 { grid-column: span 4; grid-row: span 1; }
+    .item-3 { grid-column: span 4; grid-row: span 1; }
+    .item-4 { grid-column: span 4; grid-row: span 2; }
+    .item-5 { grid-column: span 8; grid-row: span 2; }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .gallery-item-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
       opacity: 0;
-      transition: var(--transition-smooth);
+      transition: var(--transition-med);
       display: flex;
-      align-items: flex-end;
-      padding: 2rem;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .gallery-item:hover .gallery-item-overlay {
       opacity: 1;
     }
 
-    .gallery-item-text h4 {
-      color: #fff;
-      font-size: 1.2rem;
+    .gallery-item-text span {
+      color: var(--gold-main);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      display: block;
+      margin-bottom: 0.5rem;
       transform: translateY(20px);
       opacity: 0;
-      transition: var(--transition-smooth);
+      transition: var(--transition-med);
     }
 
+    .gallery-item-text h4 {
+      color: #fff;
+      font-size: 1.8rem;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: var(--transition-med);
+      transition-delay: 0.1s;
+    }
+
+    .gallery-item:hover .gallery-item-text span,
     .gallery-item:hover .gallery-item-text h4 {
       transform: translateY(0);
       opacity: 1;
     }
 
+    /* Contact Section */
     .contact {
-      background: linear-gradient(to right, var(--surface-color) 0%, var(--bg-color) 100%);
-      border-top: 1px solid rgba(255,255,255,0.05);
+      background: var(--bg-color);
+      position: relative;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 6rem;
+    }
+
+    .contact-info-wrapper {
+      padding-right: 3rem;
     }
 
     .contact-info-item {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    
+    .contact-icon {
+      color: var(--gold-main);
+      font-size: 1.5rem;
+      margin-top: 5px;
     }
 
     .contact-info-item h4 {
-      color: var(--accent-gold);
+      color: var(--text-main);
       margin-bottom: 0.5rem;
       font-family: var(--font-body);
       text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
     }
 
     .contact-info-item p {
       font-size: 1.2rem;
-      color: var(--text-primary);
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Form Design */
+    .contact-form {
+      background: var(--surface-card);
+      backdrop-filter: blur(20px);
+      padding: 4rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
 
     form {
       display: grid;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .input-group {
@@ -471,90 +651,159 @@
       width: 100%;
       background: transparent;
       border: none;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       padding: 1rem 0;
-      color: var(--text-primary);
+      color: var(--text-main);
       font-family: var(--font-body);
-      font-size: 1rem;
+      font-size: 1.1rem;
       transition: var(--transition-fast);
+      border-radius: 0;
     }
 
     input:focus, textarea:focus {
       outline: none;
-      border-bottom-color: var(--accent-gold);
+      border-bottom-color: var(--gold-main);
+      background: rgba(255,255,255,0.02);
+      padding-left: 15px;
     }
 
     textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 120px;
     }
 
     label {
       position: absolute;
       top: 1rem;
       left: 0;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       pointer-events: none;
       transition: var(--transition-fast);
+      font-size: 1rem;
     }
 
     input:focus ~ label,
     input:valid ~ label,
     textarea:focus ~ label,
     textarea:valid ~ label {
-      top: -10px;
-      font-size: 0.8rem;
-      color: var(--accent-gold);
+      top: -12px;
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      left: 0;
     }
 
+    /* Footer */
     footer {
       background: #000;
-      padding: 3rem 5%;
-      text-align: center;
+      padding: 5rem 6% 2rem;
       border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
     }
 
     .footer-logo {
       font-family: var(--font-heading);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #fff;
+      font-size: 2rem;
+      color: var(--text-main);
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+
+    .footer-logo span {
+      color: var(--gold-main);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+      transition: var(--transition-fast);
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold-light);
     }
 
     footer p {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin: 0 auto;
-      color: var(--text-secondary);
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
+    /* Reveal Animations */
     .reveal {
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
+    
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
 
-    @media (max-width: 900px) {
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 350px;
+      }
+      .item-1, .item-2, .item-3, .item-4, .item-5 {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+
+    @media (max-width: 992px) {
       .about-grid, .contact-grid {
         grid-template-columns: 1fr;
+        gap: 4rem;
       }
-      
+      .about-image-wrapper {
+        padding-right: 0;
+        padding-bottom: 2rem;
+      }
+      .about-image-wrapper::after {
+        width: 100%;
+        height: 100%;
+        transform: translate(-15px, 15px);
+      }
+      .contact-info-wrapper {
+        padding-right: 0;
+      }
+      .contact-form {
+        padding: 3rem 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.5rem; }
+      section { padding: 6rem 0; }
       .portfolio-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 1.5rem;
       }
-      
-      nav ul {
-        display: none;
-      }
-      
-      .logo-img {
-        height: 40px;
+      .gallery-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -564,16 +813,15 @@
   <!-- Navigation -->
   <header id="header">
     <a href="#" class="logo-container">
-      <!-- Original Company Logo Image -->
-      <img src="IMG_0051-150x150-1920w.webp" alt="Jason Watts Home Logo" class="logo-img" onerror="this.src='IMG_0004-150x150-1920w.webp'">
-      <div class="logo-text">Jason Watts <span>Home</span></div>
+      <img src="IMG_0004-150x150-1920w.webp" alt="Jason Watts Home Logo" class="logo-img">
+      <div class="logo-text">Jason Watts <span class="gold-text">Home</span></div>
     </a>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">The Vision</a></li>
+        <li><a href="#services">Expertise</a></li>
+        <li><a href="#portfolio">Masterpieces</a></li>
+        <li><a href="#contact">Inquire</a></li>
       </ul>
     </nav>
   </header>
@@ -581,28 +829,35 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-vignette"></div>
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content reveal">
-        <span class="hero-subtitle">Master Craftsmanship</span>
-        <h1>Building Your Legacy</h1>
+        <span class="hero-subtitle">Bespoke Custom Estates</span>
+        <h1><span class="gold-text">Building</span> Your Legacy</h1>
         <p>Experience unparalleled quality and visionary design. At Jason Watts Home, we build more than houses; we craft bespoke luxury environments tailored to your extraordinary lifestyle.</p>
-        <a href="#portfolio" class="btn">View Our Work</a>
+        <a href="#portfolio" class="btn">View The Collection</a>
       </div>
     </div>
+    <a href="#about" class="scroll-indicator">
+      <span>Discover</span>
+      <div class="scroll-line"></div>
+    </a>
   </section>
 
   <!-- About Section -->
   <section class="about" id="about">
     <div class="container about-grid">
-      <div class="about-image reveal">
-        <img src="OsageNational2024-1920w.webp" alt="Luxury home exterior at Osage National">
+      <div class="about-image-wrapper reveal">
+        <div class="about-image">
+          <img src="OsageNational2024-1920w.webp" alt="Luxury home exterior at Osage National">
+        </div>
       </div>
-      <div class="about-content reveal">
+      <div class="about-content reveal delay-1">
         <h2>Uncompromising Quality</h2>
         <p>Every Jason Watts home is a testament to our relentless pursuit of perfection. From the initial blueprint to the final, exquisite detail, we source the finest materials and employ master artisans.</p>
-        <p>Our commitment is simple: delivering a seamless, premium building experience that culminates in a masterpiece you will proudly call home for generations.</p>
-        <a href="#contact" class="btn">Start Your Project</a>
+        <p>Our commitment is simple: delivering a seamless, premium building experience that culminates in an architectural masterpiece you will proudly call home for generations.</p>
+        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Start Your Journey</a>
       </div>
     </div>
   </section>
@@ -612,23 +867,29 @@
     <div class="container">
       <div class="text-center reveal">
         <h2>Our Expertise</h2>
-        <p style="margin: 0 auto;">Comprehensive bespoke solutions for the world's most discerning homeowners.</p>
+        <p style="margin: 0 auto; max-width: 600px;">Comprehensive bespoke solutions for the world's most discerning homeowners.</p>
       </div>
+      
       <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon">🏗️</div>
+        <div class="service-card reveal delay-1">
+          <div class="service-number">01</div>
+          <div class="service-icon">✦</div>
           <h3>Custom Builds</h3>
-          <p>End-to-end management of luxury home construction, ensuring flawless execution from foundation to finish.</p>
+          <p>End-to-end management of luxury home construction, ensuring flawless execution from foundation to the finest finishing touches.</p>
         </div>
-        <div class="service-card reveal">
-          <div class="service-icon">✏️</div>
+        
+        <div class="service-card reveal delay-2">
+          <div class="service-number">02</div>
+          <div class="service-icon">⟡</div>
           <h3>Architectural Design</h3>
-          <p>Collaborating with elite architects to craft visionary spaces that perfectly blend aesthetics and functionality.</p>
+          <p>Collaborating with elite architects to craft visionary spaces that perfectly blend stunning aesthetics and functionality.</p>
         </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🛋️</div>
+        
+        <div class="service-card reveal delay-3">
+          <div class="service-number">03</div>
+          <div class="service-icon">✧</div>
           <h3>Premium Interiors</h3>
-          <p>Curated interior finishing, sourcing exclusive materials, fixtures, and smart home technology.</p>
+          <p>Curated interior finishing, sourcing exclusive materials, premium fixtures, and seamless smart home technology integration.</p>
         </div>
       </div>
     </div>
@@ -642,69 +903,61 @@
           <h2>Featured Masterpieces</h2>
           <p>A curated selection of our most distinguished projects.</p>
         </div>
+        <a href="#contact" class="btn">Commission a Build</a>
       </div>
       
       <div class="gallery-grid">
-        <div class="gallery-item reveal">
+        <!-- Main Large Item -->
+        <div class="gallery-item item-1 reveal">
           <img src="ColumbiaBuild2021-1920w.webp" alt="Columbia Build 2021">
           <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Columbia Build 2021</h4></div>
+            <div class="gallery-item-text">
+              <span>Completed 2021</span>
+              <h4>Columbia Estate</h4>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item reveal">
-          <img src="AshlandFraming2022-1920w.webp" alt="Ashland Framing">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Ashland Estate</h4></div>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img src="FramingDrone-1920w.webp" alt="Framing Drone View">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Structural Excellence</h4></div>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
+        <!-- Smaller Items -->
+        <div class="gallery-item item-2 reveal delay-1">
           <img src="IMG_0080-1920w.webp" alt="Interior Details">
           <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Interior Refinement</h4></div>
+            <div class="gallery-item-text">
+              <span>Interior Details</span>
+              <h4>Bespoke Finishes</h4>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item reveal">
-          <img src="IMG_0073-1920w.webp" alt="Custom Finishes">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Custom Finishes</h4></div>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
+        <div class="gallery-item item-3 reveal delay-2">
           <img src="IMG_0076-1920w.webp" alt="Living Spaces">
           <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Expansive Living Spaces</h4></div>
-          </div>
-        </div>
-        
-        <div class="gallery-item reveal">
-          <img src="IMG_0071-36bb2d7c-1920w.webp" alt="Architectural Detail">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Architectural Detail</h4></div>
+            <div class="gallery-item-text">
+              <span>Living Spaces</span>
+              <h4>Grand Scale</h4>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item reveal">
+        <!-- Medium Vertical Item -->
+        <div class="gallery-item item-4 reveal">
+          <img src="AshlandFraming2022-1920w.webp" alt="Ashland Framing">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-text">
+              <span>Structural Phase</span>
+              <h4>Ashland Framework</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Large Bottom Item -->
+        <div class="gallery-item item-5 reveal delay-1">
           <img src="20170813_130246-1920w.webp" alt="Exterior View">
           <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Estate Grounds</h4></div>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img src="IMG_1462-1920w.webp" alt="Build Progress">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-text"><h4>Foundation Phase</h4></div>
+            <div class="gallery-item-text">
+              <span>Exterior Design</span>
+              <h4>Elevated Living</h4>
+            </div>
           </div>
         </div>
       </div>
@@ -714,75 +967,95 @@
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="container contact-grid">
-      <div class="contact-info reveal">
+      <div class="contact-info-wrapper reveal">
         <h2>Inquire</h2>
-        <p style="margin-bottom: 3rem;">Ready to build your dream home? Connect with our team to discuss your vision.</p>
+        <p style="margin-bottom: 4rem;">Ready to build your ultimate dream home? Connect with our team of experts to discuss your vision.</p>
         
         <div class="contact-info-item">
-          <h4>Location</h4>
-          <p>Osage National, MO</p>
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Osage National, MO</p>
+          </div>
         </div>
+        
         <div class="contact-info-item">
-          <h4>Email</h4>
-          <p>contact@jasonwattshome.com</p>
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Direct Email</h4>
+            <p>contact@jasonwattshome.com</p>
+          </div>
         </div>
+        
         <div class="contact-info-item">
-          <h4>Phone</h4>
-          <p>(555) 123-4567</p>
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone Inquiries</h4>
+            <p>(555) 123-4567</p>
+          </div>
         </div>
       </div>
       
-      <div class="contact-form reveal">
-        <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. A representative will contact you shortly.');">
-          <div class="input-group">
-            <input type="text" id="name" required>
-            <label for="name">Full Name</label>
-          </div>
-          <div class="input-group">
-            <input type="email" id="email" required>
-            <label for="email">Email Address</label>
-          </div>
-          <div class="input-group">
-            <input type="text" id="phone" required>
-            <label for="phone">Phone Number</label>
-          </div>
-          <div class="input-group">
-            <textarea id="message" required></textarea>
-            <label for="message">Your Vision</label>
-          </div>
-          <button type="submit" class="btn" style="margin-top: 1rem;">Submit Inquiry</button>
-        </form>
+      <div class="contact-form-wrapper reveal delay-1">
+        <div class="contact-form">
+          <h3 style="margin-bottom: 2rem; font-size: 2rem;">Send a Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. A representative will contact you shortly.');">
+            <div class="input-group">
+              <input type="text" id="name" required>
+              <label for="name">Full Name</label>
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" required>
+              <label for="email">Email Address</label>
+            </div>
+            <div class="input-group">
+              <input type="text" id="phone" required>
+              <label for="phone">Phone Number</label>
+            </div>
+            <div class="input-group">
+              <textarea id="message" required></textarea>
+              <label for="message">Your Vision</label>
+            </div>
+            <button type="submit" class="btn" style="margin-top: 1rem; width: 100%;">Submit Inquiry</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <div class="footer-logo">Jason Watts <span>Home</span></div>
-      <p>&copy; 2026 Jason Watts Home. All Rights Reserved. Master Custom Builders.</p>
+      <a href="#" class="footer-logo">Jason Watts <span>Home</span></a>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">The Vision</a>
+        <a href="#services">Expertise</a>
+        <a href="#portfolio">Masterpieces</a>
+      </div>
+      <p>&copy; 2026 Jason Watts Home. All Rights Reserved. Custom Luxury Builders.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       
-      // Header scroll effect
+      // Premium Header scroll effect
       const header = document.getElementById('header');
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 80) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
       });
 
-      // Parallax effect for Hero Background
+      // Subtle Parallax effect for Hero Background
       const heroBg = document.getElementById('heroBg');
       window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-        // Move the background slightly slower than the scroll speed for a parallax effect
         if (heroBg && scrollPosition < window.innerHeight) {
-          heroBg.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+          // Move the background slightly slower than the scroll speed
+          heroBg.style.transform = `translateY(${scrollPosition * 0.3}px)`;
         }
       });
 
@@ -790,7 +1063,7 @@
       const revealElements = document.querySelectorAll('.reveal');
 
       const revealOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
       };
 
@@ -798,6 +1071,7 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
+            // Optional: unobserve if you only want the animation to happen once
             observer.unobserve(entry.target);
           }
         });
